@@ -2,6 +2,7 @@
 import q from "./data/quizes.json";
 import { ref,watch } from "vue";
 import Card from "./components/Card.vue"
+import { RouterView } from "vue-router";
 const quizes= ref(q);
 const search = ref("");
 
@@ -13,21 +14,13 @@ watch(search,()=>{
 </script>
 
 <template>
+  <RouterView/>
   <div class="container">
     <header>
       <h1>Quizes</h1>
       <input v-model.trim="search"  type="text" placeholder="Search...">
     </header>
     <Card v-for="quiz in quizes" :key="quiz.id" :quiz="quiz" />
-    <!-- <div v-for="quiz in quizes" class="gallery" :key="quiz.id">
-      <a target="_blank" href="">
-        <img :src="quiz.img" :alt="quiz.name" width="600" height="400">
-      </a>
-      <div class="card-text">
-            <h2>{{ quiz.name }}</h2>
-            <p>{{ quiz.questions.length }} questions</p>
-        </div>
-    </div> -->
   </div>
 </template>
 
