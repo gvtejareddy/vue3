@@ -1,21 +1,21 @@
 <script setup>
 
-const {quiz}=defineProps(['quiz'])
+const { quiz } = defineProps(['quiz'])
 
 console.log(quiz)
 
 </script>
 
 <template>
-        <div  class="gallery" >
-      <a target="_blank" href="">
-        <img :src="quiz.img" width="600" height="400">
-      </a>
-      <div class="card-text">
-            <h2>{{ quiz.name }}</h2>
-            <p>{{ quiz.questions.length }} questions</p>
-        </div>
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img :src="quiz.img" width="600" height="400">
+    </a>
+    <div class="card-text">
+      <h2>{{ quiz.name }}</h2>
+      <p>{{ quiz.questions.length }} questions</p>
     </div>
+  </div>
 
 </template>
 <style scoped>
@@ -39,11 +39,12 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
-.card-text {
-    padding: 0 5px
-  }
 
-  .card-text h2 {
-    font-weight: bold;
-  }
+.card-text {
+  padding: 0 5px
+}
+
+.card-text h2 {
+  font-weight: bold;
+}
 </style>
